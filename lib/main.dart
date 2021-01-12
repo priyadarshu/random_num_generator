@@ -13,13 +13,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    var rng = new Random();
-    var value;
+    Random rng = new Random();
+    int randomNumber;
     void _randValue() {
       setState(() {
-        for (var i = 0; i < 10; i++) {
-          value = rng.nextInt(100);
-        }
+        randomNumber = rng.nextInt(100);
       });
     }
 
@@ -38,7 +36,7 @@ class _MyAppState extends State<MyApp> {
           children: [
             Card(
               child: Text(
-                '$value',
+                '$randomNumber',
                 style: TextStyle(color: Colors.blueGrey, fontSize: 24.0),
               ),
             ),
@@ -53,3 +51,11 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+// import 'dart:math';
+
+// void main() {
+//   Random random = new Random();
+//   int randomNumber = random.nextInt(100);
+//   print(randomNumber);
+// }

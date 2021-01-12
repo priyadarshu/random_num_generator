@@ -13,12 +13,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    Random rng = new Random();
-    int randomNumber;
+    final rng = new Random();
+    int randomNumber = 0;
     void _randValue() {
-      setState(() {
-        randomNumber = rng.nextInt(100);
-      });
+      randomNumber = rng.nextInt(100);
     }
 
     return MaterialApp(
@@ -34,10 +32,13 @@ class _MyAppState extends State<MyApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Card(
-              child: Text(
-                '$randomNumber',
-                style: TextStyle(color: Colors.blueGrey, fontSize: 24.0),
+            SizedBox(
+              height: 30.0,
+              child: Card(
+                child: Text(
+                  '$randomNumber',
+                  style: TextStyle(color: Colors.blueGrey, fontSize: 24.0),
+                ),
               ),
             ),
           ],
